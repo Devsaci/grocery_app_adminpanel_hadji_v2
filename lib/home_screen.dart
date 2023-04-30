@@ -3,9 +3,14 @@ import 'package:provider/provider.dart';
 
 import 'provider/dark_theme_provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
@@ -23,7 +28,9 @@ class HomeScreen extends StatelessWidget {
               : Icons.light_mode_outlined),
           value: themeState.getDarkTheme,
           onChanged: (bool value) {
-            themeState.setDarkTheme = value;
+            setState(() {
+              themeState.setDarkTheme = value;
+            });
           },
         ),
       ),
