@@ -12,7 +12,7 @@ class Styles {
           brightness: isDarkTheme ? Brightness.dark : Brightness.light),
       cardColor:
       isDarkTheme ? const Color(0xFF0a0d2c) : const Color(0xFFF2FDFD),
-
+      canvasColor: isDarkTheme ? Colors.black : Colors.grey[50],
 
     );
   }
