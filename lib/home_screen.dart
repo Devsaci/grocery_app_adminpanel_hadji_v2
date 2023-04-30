@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -20,8 +21,10 @@ class HomeScreen extends StatelessWidget {
           secondary: Icon(themeState.getDarkTheme
               ? Icons.dark_mode_outlined
               : Icons.light_mode_outlined),
-          value: false,
-          onChanged: (bool value) {},
+          value: themeState.getDarkTheme,
+          onChanged: (bool value) {
+            themeState.setDarkTheme = value;
+          },
         ),
       ),
     );
