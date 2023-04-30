@@ -9,13 +9,24 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
    MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   DarkThemeProvider themeChangeProvider = DarkThemeProvider();
 
   void getCurrentAppTheme() async {
     themeChangeProvider.setDarkTheme =
     await themeChangeProvider.darkThemePrefs.getTheme();
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
