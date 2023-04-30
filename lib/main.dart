@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_){})
+        ChangeNotifierProvider(create: (_){return themeChangeProvider;})
       ],
       child: MaterialApp(
         title: "Admin Panel",
