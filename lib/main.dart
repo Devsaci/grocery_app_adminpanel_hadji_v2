@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-   MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -21,8 +21,9 @@ class _MyAppState extends State<MyApp> {
 
   void getCurrentAppTheme() async {
     themeChangeProvider.setDarkTheme =
-    await themeChangeProvider.darkThemePrefs.getTheme();
+        await themeChangeProvider.darkThemePrefs.getTheme();
   }
+
   @override
   void initState() {
     getCurrentAppTheme();
@@ -33,12 +34,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_){return themeChangeProvider;})
+        ChangeNotifierProvider(create: (_) {
+          return themeChangeProvider;
+        }),
       ],
-      child: MaterialApp(
-        title: "Admin Panel",
-        theme: Styles.themeData(true, context),
-        home: const HomeScreen(),
+      child: Consumer<DarkThemeProvider>(
+        builder: (context, themeProvider, child) {
+          return MaterialApp(
+              title: "Admin Panel",
+              theme: Styles.themeData(true, context),
+              home: const HomeScreen());
+        },
       ),
     );
   }
