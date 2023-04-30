@@ -10,6 +10,8 @@ class Styles {
           secondary:
               isDarkTheme ? const Color(0xFF1a1f3c) : const Color(0xFFE8FDFD),
           brightness: isDarkTheme ? Brightness.dark : Brightness.light),
+      cardColor:
+      isDarkTheme ? const Color(0xFF0a0d2c) : const Color(0xFFF2FDFD),
 
 
     );
