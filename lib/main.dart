@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app_adminpanel_hadji_v2/consts/theme_data.dart';
 
 import 'home_screen.dart';
 
@@ -13,11 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Admin Panel",
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Colors.black),
-        scaffoldBackgroundColor: Colors.amber,
-        primarySwatch: Colors.brown,
-      ),
+      theme: Styles.themeData(false, context),
       home: const HomeScreen(),
     );
   }
