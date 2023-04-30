@@ -10,7 +10,12 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text("Admin Panel"),
       ),
-      body: const Center(child: Text("Admin Panel")),
+      body: Center(
+        child: SwitchListTile(
+          value: false,
+          onChanged: (bool value) {},
+        ),
+      ),
     );
   }
 }

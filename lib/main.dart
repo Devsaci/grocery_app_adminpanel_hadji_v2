@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         builder: (context, themeProvider, child) {
           return MaterialApp(
               title: "Admin Panel",
-              theme: Styles.themeData(true, context),
+              theme: Styles.themeData(themeProvider.getDarkTheme, context),
               home: const HomeScreen());
         },
       ),
