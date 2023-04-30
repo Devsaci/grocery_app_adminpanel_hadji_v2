@@ -13,6 +13,10 @@ class Styles {
       cardColor:
       isDarkTheme ? const Color(0xFF0a0d2c) : const Color(0xFFF2FDFD),
       canvasColor: isDarkTheme ? Colors.black : Colors.grey[50],
+      buttonTheme: Theme.of(context).buttonTheme.copyWith(
+          colorScheme: isDarkTheme
+              ? const ColorScheme.dark()
+              : const ColorScheme.light()),
 
     );
   }
