@@ -6,6 +6,12 @@ class Styles {
       scaffoldBackgroundColor:
           isDarkTheme ? Colors.teal.shade900 : Colors.teal.shade50,
       primaryColor: Colors.blue,
+      colorScheme: ThemeData().colorScheme.copyWith(
+          secondary:
+              isDarkTheme ? const Color(0xFF1a1f3c) : const Color(0xFFE8FDFD),
+          brightness: isDarkTheme ? Brightness.dark : Brightness.light),
+
+
     );
   }
 }
