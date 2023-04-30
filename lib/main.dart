@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app_adminpanel_hadji_v2/consts/theme_data.dart';
+import 'package:provider/provider.dart';
 
 import 'home_screen.dart';
 
@@ -12,10 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Admin Panel",
-      theme: Styles.themeData(true, context),
-      home: const HomeScreen(),
+    return MultiProvider(
+      providers: [],
+      child: MaterialApp(
+        title: "Admin Panel",
+        theme: Styles.themeData(true, context),
+        home: const HomeScreen(),
+      ),
     );
   }
 }
