@@ -3,14 +3,21 @@ import 'package:grocery_app_adminpanel_hadji_v2/consts/theme_data.dart';
 import 'package:provider/provider.dart';
 
 import 'home_screen.dart';
+import 'provider/dark_theme_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-  void getCurrentAppTheme() async{}
+   MyApp({Key? key}) : super(key: key);
+  DarkThemeProvider themeChangeProvider = DarkThemeProvider();
+
+  void getCurrentAppTheme() async {
+    themeChangeProvider.setDarkTheme =
+    await themeChangeProvider.darkThemePrefs.getTheme();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
