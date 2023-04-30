@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: SwitchListTile(
+          title: const Text('Theme'),
           value: false,
           onChanged: (bool value) {},
         ),
