@@ -17,7 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text("Admin Panel"),
       ),
       body: Center(
